@@ -1,6 +1,6 @@
 // 1. Create a variable called sentence. The value of the variable should be a string that contains the words “not” and “bad” //
 
-let sentence = "The movie is not that bad, I like it";
+let sentence = "The movie is not that bad , I like it";
 
 // 2. Create a variable called wordNot where it’s value is the first appearance of the substring “not” (from the sentence variable). //
 
@@ -28,4 +28,21 @@ if (wordNot_index < wordBad_index) {
 } 
 else if(wordNot_index < wordBad_index) {
     console.log(sentence);
+}
+
+// ============================ without regex ================================== //
+
+let sentenceArray = sentence.split(" ");
+let wordnot = sentenceArray.indexOf("not")
+console.log(wordnot);
+let wordbad = sentenceArray.indexOf("bad")
+console.log(wordbad);
+
+let index = wordbad - wordnot + 1;
+
+if (wordnot < wordbad) {
+    sentenceArray.splice(3, index, "good");
+    console.log(sentenceArray.join(" "))
+} else {
+    console.log(sentence)
 }
